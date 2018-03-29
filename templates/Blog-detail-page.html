@@ -1,0 +1,137 @@
+{% extends 'blog_base.html' %}
+{% load staticfiles %}
+{% block title %}Blog-McEachensite{% endblock %}
+{% block content %}
+<div class="blog fltlft">
+
+<div class="blog-box">
+    <div class="blog-info">
+		<span class="blog-date text-highlight">{{ blog.add_time.date }}</span><span class="dc-sep">/</span><a class="blog-category" href="?category={{ blog.category.id }}">{{ blog.category }}</a>
+	</div>
+	<a href="{% url 'blogs:blog_detail' blog.id %}">
+		<div class="blog-title">
+			<span>{{ blog.title }}</span>
+		</div>
+	</a>
+	<div class="blog-content content-generic-body">
+        <p>{{ blog.content|linebreaksbr }}</p>
+	</div>
+	<div class="blog-sep"></div>
+    <div class="blog-tag">
+        {% for tag in tags %}
+            <a class="tag-item" href="?tag={{ tag.tag.id }}">{{ tag.tag }}</a>
+        {% endfor %}
+
+    </div>
+    <div class="blog-sep"></div>
+
+    <div class="comments">
+        <div class="title">
+            <span>评论区</span>
+        </div>
+        <div class="comment-items">
+
+{% for comment in all_comments %}
+<div class="comment-item">
+    <div class="comment-item-info">
+        <span class="comment-date-day">{{ comment.add_time.day }}</span><span class="dc-sep">/</span><span class="comment-date-month">{{ comment.add_time.month }}</span><span class="comment-author">{{ comment.user.nick_name }}</span>
+    </div>
+    <div class="comment-item-content">
+        <span><p>{{ comment.comment }}</p></span>
+    </div>
+</div>
+{% endfor %}
+
+
+        </div>
+        <div class="blog-sep"></div>
+        <div class="comment-post-box">
+            <div class="title">
+                <span>评论一下吧</span>
+            </div>
+            <div class="comment-post-form-box">
+                <form id="comment_form" action="Blog-detail-page.html" method="post" >
+                    {% csrf_token %}
+                    <div class="input-box-r1">
+                        <img class="comment-form-icon" id="name_icon" src="{% static 'images/person.png' %}" width="30">
+                        <div id="comment_name_input_box">
+                            <input id="name" type="text" name="username" placeholder="昵称">
+                        </div>
+                    </div>
+                    <div class="input-box-r1">
+                        <img class="comment-form-icon" id="email_icon" src="{% static 'images/at.png' %}" width="30">
+                        <div id="comment_email_input_box">
+                            <input id="email" type="text" name="email" placeholder="邮箱">
+                        </div>
+                    </div>
+                    <div class="input-box-r2 contact-content-box">
+                        <img class="comment-form-icon" id="content_icon" src="{% static 'images/pencil.png' %}" width="30">
+                        <div id="comment_content_input_box">
+                            <textarea id="content" name="content" placeholder="留下评论" rows="1" onkeyup="auto_grow(this)"></textarea>
+                        </div>
+                    </div>
+                    <div class="error" style="display:none" >
+                        <span id="error_msg"></span>
+                    </div>
+                    <div class="input-box-r3">
+                        <a id="submit_btn">发送</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="blog-sep"></div>
+<!-- end .blog-box --></div>
+	</div>
+{% endblock %}
+{#action="{% url 'blogs:blog_detail' blog.id %}" method="post"#}
+{% block custom_js %}
+<script>
+		$(document).ready(function(e) {
+			var on_submit = false;
+			var form = $('#comment_form');
+			var btn = $('#submit_btn');
+			var error_msg = $('#error_msg');
+
+			function show_error_message(message) {
+				error_msg.text(message);
+				error_msg.parent().slideDown(200);
+			}
+
+			function submit() {
+				if (on_submit) {
+					return false;
+				}
+				on_submit = true;
+
+				btn.text('SENDING...');
+
+				$.ajax({
+					url: "{% url 'blogs:add_comment' blog.id %}",
+					type: "POST",
+					data: form.serialize(),
+					dataType: 'json'
+				})
+				.success(function(data){
+					if (data.status == 'success') {
+						show_error_message("Thank you for you support!");
+						window.location.reload();
+						{#$('#content').val('');#}
+					} else {
+						show_error_message(data.msg);
+					}
+				})
+				.error(function(jqXHR, textStatus) {
+					show_error_message('Network or server error. Click to try again.');
+				})
+				.complete(function(jqXHR, textStatus){
+					btn.text('SEND NOW');
+					on_submit = false;
+				});
+				return false;
+			}
+
+			btn.bind('click', submit);
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+.contact-box {
+
+}
+.contact-box .contact-title {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	font-size: 1.8em;
+}
+.contact-box .contact-desc {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	font-size: 1.2em;
+	padding-top: 20px;
+}
+.contact-box .contact-form-box {
+	padding-top: 60px;
+}
+.contact-box .contact-form-box .input-box-r1 {
+	position: relative;
+	width: 48%;
+}
+.contact-box .contact-form-box .input-box-r2 {
+	position: relative;
+	padding-top: 50px;
+}
+.contact-box .contact-form-box .contact-form-icon {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.contact-box .contact-form-box .input-box-r1 div, .contact-box .contact-form-box .input-box-r2 div {
+	margin-left: 50px;
+	padding-bottom: 15px;
+	border-bottom-color: #dddddd;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	text-align: center;
+}
+.contact-box .contact-form-box input, .contact-box .contact-form-box textarea {
+	border: 0;
+	background-color: transparent;
+	color: #555454;
+	font-family: DengXian, 'Microsoft Yahei', Tahoma, Arial, Helvetica, Simsun, STHeiti;
+}
+.contact-box .contact-form-box input {
+	width: 95%;
+	font-size: 1.2em;
+}
+.contact-box .contact-form-box textarea {
+	width: 97.5%;
+	min-width: 97.5%;
+	max-width: 97.5%;
+	font-size: 1.2em;
+}
+.contact-box .contact-form-box .input-box-r3 {
+	padding-top: 50px;
+	text-align: center;
+}
+.contact-box .contact-form-box .input-box-r3 a {
+	text-decoration: underline;
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	font-weight: bold;
+	font-size: 1.4em;
+	cursor: pointer;
+}
+.contact-box .contact-form-box .error {
+	margin-top: 40px;
+	padding: 20px 40px;
+	font-size: 1.2em;
+	color: #FFF;
+	background-color: #F63;
+}
+@media screen and (max-width: 750px) {
+	.contact-box .contact-form-box .input-box-r1 {
+		width: 100%;
+	}
+	.contact-box .contact-form-box .contact-email-box {
+		padding-top: 50px;
+	}
+	.contact-box .contact-form-box input {
+		width: 97.5%;
+	}
+}

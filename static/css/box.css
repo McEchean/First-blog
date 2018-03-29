@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content {
+	padding-top: 0px !important;
+}
+.the-box {
+	padding-top: 60px;
+}
+.the-box .box-info {
+	font-size: 1.4em;
+}
+.the-box .box-info .box-date-day {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+}
+.the-box .box-info .dc-sep {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	padding: 0px 5px;
+}
+.the-box .box-info .box-date-month {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+}
+.the-box .box-info .box-title {
+	padding-left: 30px;
+	font-weight: bold;
+}
+.the-box .box-top-image {
+	padding-top: 10px;
+}
+.the-box .box-top-image img {
+	display: block;
+	border: 0;
+}
+.the-box .box-content {
+	padding-top: 20px;
+	line-height: 1.8em;
+}
+.the-box .box-sep {
+	width: 200px;
+	margin-top: 40px;
+	font-size: 1px;
+	line-height: 0;
+	height: 2px;
+	background-color: #dddddd;
+}
+.image-box .box-content img {
+	display: block;
+	float: left;
+	width: 25%;
+}
+.image-box .image-box-frame {
+	width: 100%;
+}
+.paginator {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	padding-top: 60px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 950px) {
+	.image-box .box-content img {
+		width: 33.3%;
+	}
+}
+@media screen and (max-width: 650px) {
+	.image-box .box-content img {
+		width: 50%;
+	}
+}

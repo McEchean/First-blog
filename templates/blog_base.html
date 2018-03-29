@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!-- saved from url=(0030)http://www.dannysite.com/blog/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+    var _speedMark = new Date();
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
+<meta name="description" content="Danny 的个人网站，采用的 Python Django 框架开发而成，从兴趣到实践，意在学习、分享与记录。技术专注于 Python 与前端开发，包括 Python、Django、HTML、CSS、JavaScript、Redis、Linux 等。">
+<meta name="keywords" content="编程,Python,Django,HTML,CSS,JavaScript,Redis,Linux,PHP,个人网站">
+<title>{% block title %}Blog - Welcome to DannySite{% endblock %}</title>
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for the latest blogs to dannysite.com" href="http://www.dannysite.com/blog/rss/">
+<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+<style type="text/css">
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+    -ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+body {
+	font-family: DengXian, 'Microsoft Yahei', Tahoma, Arial, Helvetica, Simsun, STHeiti;
+	font-size: 14px;
+	-ms-text-size-adjust: none;
+	background-color: #282828;
+	margin: 0;
+	padding: 0;
+	color: #1c1c1c;
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+input {
+	outline: none;
+}
+textarea {
+	outline: none;
+}
+a {
+	color: #005059;
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+a:link {
+	color: #005059;
+	text-decoration: none;
+}
+a:visited {
+	color: #005059;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	color: #ff8f21 !important;
+	text-decoration: underline;
+}
+.text-focus {
+	color: #ff8f21 !important;
+}
+.box-focus {
+	color: #FFF !important;
+	background-color: #005059 !important;
+}
+.text-highlight {
+    color: #ff8f21 !important;
+}
+.container {
+	background-color: #fff;
+    _width: 1175px;
+	max-width: 1275px;
+	min-width: 320px;
+    min-width/*\**/: 1075px\9;
+	min-width: 1175px\9\0;
+	margin: 0 auto;
+}
+.header {
+	position: relative;
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+    background-color: #005059;
+}
+.header .header-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	margin-top: 20px;
+}
+.header .header-nav .header-nav-content {
+	width: 98%;
+	margin: 0 auto;
+	padding: 10px 0px;
+	border-top-style: solid;
+	border-top-color: #005059;
+	border-top-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #005059;
+	border-bottom-width: 2px;
+}
+.header .header-nav .header-nav-content .logo-click {
+	text-decoration: none;
+}
+.header .header-nav .header-nav-content .logo {
+	width: 120px;
+	height: 76px;
+	padding-left: 30px;
+	text-align: right;
+	font-size: 2.4em;
+}
+.header .header-nav .header-nav-content .logo span {
+	text-decoration: none;
+}
+.header .header-nav .header-nav-content .logo .logo-top{
+	height: 35px;
+}
+.header .header-nav .header-nav-content .menu-btn {
+	display: none;
+	height: 50px;
+	line-height: 76px;
+	padding-right: 30px;
+	cursor: pointer;
+}
+.header .header-nav .header-nav-content .menu-btn img {
+	vertical-align: middle;
+}
+.header .header-nav .header-nav-content .nav-bar {
+	position: relative;
+	display: block;
+}
+.header .header-nav .header-nav-content .nav-bar a {
+	height: 76px;
+	line-height: 76px;
+	font-size: 1.6em;
+	display: inline-block;
+	text-align: center;
+	margin-right: 30px;
+}
+.header .header-nav .header-nav-content .nav-bar .focus {
+	color: #ff8f21 !important;
+}
+.header .header-nav .header-nav-content .nav-bar .focus:hover {
+	text-decoration: none;
+}
+.header .header-page-title {
+	position: absolute;
+	bottom: 60px;
+	width: 100%;
+	color: #FFF;
+	text-align: center;
+}
+.header .header-page-title .page-title {
+	font-size: 3.2em;
+    color: #fff;
+}
+.header .header-page-title .page-desc {
+	font-size: 1.2em;
+	padding-top: 20px;
+    color: #fff;
+}
+.header .header-bg {
+	overflow: hidden;
+	z-index: 10;
+}
+.header .header-bg img {
+	display: block;
+	border: 0;
+}
+
+.content {
+	width: 95%;
+	margin: 0 auto;
+	padding: 80px 0px;
+}
+.content ul, .content ol {
+	padding: 0 15px 15px 40px;
+}
+.content .content-generic-title {
+    color: #1c1c1c;
+}
+.content .content-generic-body {
+    color: #555454;
+}
+
+
+.footer {
+	padding: 0px 0px 40px 0px;
+	background-color: #005059;
+	color: #FFF;
+}
+.footer .ft-item-box {
+	width: 49%;
+	min-width: 300px;
+	padding-top: 60px;
+}
+.footer .ft-item-box .ft-box-title {
+	font-size: 1.4em;
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	padding-left: 30px;
+}
+.footer .ft-item-box .ft-box-content {
+	padding: 40px 0px 0px 30px;
+}
+.footer .ft-item-box .ft-box-content #sc_items .sc-item {
+	display: inline-block;
+	padding: 0px 20px 20px 0px;
+}
+.footer .ft-item-box .ft-box-content #sc_items .sc-item:hover {
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+}
+.footer .ft-item-box .ft-box-content #sc_sep {
+	width: 150px;
+	margin-top: 10px;
+	font-size: 1px;
+	line-height: 0;
+	height: 2px;
+	background-color: #FFF;
+}
+.footer .ft-item-box #link_content .link-item:first-child {
+	padding: 0px 0px 20px 0px !important;
+}
+.footer .ft-item-box #link_content .link-item {
+	color: #FFF !important;
+	display: block;
+	padding: 20px 0px;
+	width: 150px;
+	border-bottom-color: #FFF;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+}
+.footer .copyright {
+	font-family: 'country_gothic', Arial, Helvetica, Simsun, STHeiti;
+	padding-top: 80px;
+	text-align: center;
+}
+
+.fltrt {
+	float: right;
+}
+.fltlft {
+	float: left;
+}
+.clearfloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+@media screen and (max-width: 680px) {
+	.header {
+		font-size: 10px;
+	}
+	.header .header-nav .header-nav-content .logo {
+		width: 100px;
+		height: 59px;
+		padding-left: 0px;
+		text-align: right;
+		font-size: 2.4em;
+	}
+	.header .header-nav .header-nav-content .logo .logo-top{
+		height: 29px;
+	}
+	.header .header-nav .header-nav-content .menu-btn {
+		line-height: 59px;
+		display: block;
+		padding-right: 20px;
+	}
+	.header .header-nav .header-nav-content .nav-bar {
+		display: none;
+		width: 320px;
+		background-color: #005059;
+		position: absolute;
+		top: 81px;
+		right: 0;
+	}
+	.header .header-nav .header-nav-content .nav-bar a {
+		color: #FFF;
+		display: block;
+		text-align: right;
+	}
+	.footer .ft-item-box {
+		width: 95%;
+	}
+	.footer .copyright span {
+		display: block;
+	}
+	.footer .copyright {
+		text-align: left;
+		font-size: 0.8em;
+		padding-left: 30px;
+	}
+}
+</style>
+
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="{% static 'css/shCore.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/shThemeDefault.css' %}" type="text/css" rel="stylesheet">
+
+<script src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+<script>
+	function offset_header_image(header_image) {
+		var window_width = $(window).width();
+		if (window_width <= 1275) {
+			var offset = ($(window).width() - header_image.width()) / 2;
+		} else {
+			var offset = 0;
+		}
+		if (offset > 0) {
+			offset = 0;
+		}
+		header_image.css('margin-left', offset);
+	}
+	function adjust_iframe_height() {
+	    $('.image-box-frame').css('width', $('.box-content').width());
+		$('.image-box-frame').css('height', $('.image-box-frame').width() / 16 * 8);
+	}
+	$(document).ready(function(e) {
+		var menu = $('#nav_bar');
+		var header_image = $('#header_bg_image');
+		var scroll_to_top_buttom = $('.back-to-top');
+        $('#menu_btn').click(function(e) {
+			if (menu.css('display') == 'none') {
+				menu.slideDown(200);
+			} else {
+				menu.slideUp(200);
+			}
+			return false;
+		});
+		$('body').click(function(e) {
+		   if($(e.target).parent().attr('id') != 'nav_bar' && menu.css('display') != 'none' && $(document).width() <= 680) {
+			   	menu.slideUp(200);
+				return false;
+		   }
+		});
+		$(window).resize(function(e) {
+			if($(document).width() > 680 && menu.css('display') == 'none') {
+				menu.show();
+			}
+			offset_header_image(header_image);
+			adjust_iframe_height();
+		});
+		offset_header_image(header_image);
+		adjust_iframe_height();
+		$(document).scroll(function(){
+			if($(document).scrollTop() > 560) {
+				scroll_to_top_buttom.fadeIn(100);
+			} else {
+				scroll_to_top_buttom.fadeOut(100);
+			}
+		});
+		scroll_to_top_buttom.click(function(){
+			$('html, body').animate({scrollTop: 0}, 200);
+		});
+    });
+</script>
+<script type="text/javascript" src="{% static 'images/stats' %}" charset="UTF-8"></script>
+
+    <script src="{% static 'js/placeholder.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $.fn.placeholder();
+        })
+    </script>
+    <script>
+		function auto_grow(element) {
+			element.style.height = "5px";
+			element.style.height = (element.scrollHeight)+"px";
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			var blog = $('.blog');
+
+			function adjust_blog_height() {
+				if ($(document).width() < 850) {
+					blog.css('height', 'auto');
+				} else {
+					var total_height = 0;
+					var sidebars = $('.side-bar');
+					for (i=0; i < sidebars.length; i++) {
+						total_height += $(sidebars[i]).height();
+					}
+					if (blog.height() < total_height) {
+						blog.css('height', total_height + 150);
+					}
+				}
+			}
+
+			$(window).resize(adjust_blog_height);
+			adjust_blog_height();
+		})
+	</script>
+    <script src="{% static 'js/highlighter.js' %}"></script>
+    <script src="{% static 'js/XRegExp.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/shCore.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/shAutoloader.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/syntaxhighlighter_autoloads.js' %}" type="text/javascript"></script>
+
+
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="header">
+    	<div class="header-nav">
+        	<div class="header-nav-content">
+            	<a class="logo-click" href="{% url 'homepage' %}">
+                    <div class="logo fltlft">
+                        <div class="logo-top">
+                            <span>MCEACHEN</span>
+                        </div>
+                        <div class="logo-buttom">
+                            <span>SITE</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="menu-btn fltrt" id="menu_btn">
+                	<img src="{% static 'images/6bf43b39-6cb1-41c7-9303-943d65d52d92.png' %}" width="40">
+                </a>
+                <div class="nav-bar fltrt" id="nav_bar">
+                	<a class="nav-item" href="{% url 'homepage' %}">HOME</a>
+                    <a class="nav-item focus" href="{% url 'blogs:blog_homepage' %}">BLOG</a>
+                    <a class="nav-item" href="{% url 'blogs:box' %}">BOX</a>
+                    <a class="nav-item" href="{% url 'contact' %}">CONTACT</a>
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        <!-- end .header-nav --></div>
+        <div class="header-page-title">
+        	<div class="page-title">
+            	<span>BLOG</span>
+            </div>
+            <div class="page-desc">
+            	<span>Enjoy when you can, and endure when you must.</span>
+            </div>
+        <!-- end .header-bg --></div>
+    	<div class="header-bg">
+       		<img id="header_bg_image" src="{% static 'images/00b85b0a-91c0-4b26-8c5d-299a043d511d.jpg' %}" height="560" style="margin-left: 0px;">
+        <!-- end .header-bg --></div>
+    <!-- end .header --></div>
+
+ 	<div class="content">
+
+	<div class="side-bar fltrt">
+		<div class="side-bar-box self-introduction">
+			<div class="sbar-title content-generic-title">
+				<span>关于我</span>
+			</div>
+			<div class="sbar-content">
+				<div class="avatar">
+					<img id="avatar" src="{{ MEDIA_URL }}{{ user_root.image }}" width="60%">
+				</div>
+				<div class="nickname">
+					<span>McEachen</span>
+				</div>
+				<div class="intro">
+					<p>我是你爸爸呀<b><a href="{% url 'homepage' %}">HOME PAGE</a></b>去了解我</p>
+				</div>
+			</div>
+		</div>
+		<div class="side-bar-box search">
+			<div class="sbar-title content-generic-title" id="search_title">
+				<span>搜索</span>
+			</div>
+			<div class="sbar-content" id="search_box">
+				<img id="search_icon" src="{% static 'images/search.png' %}" width="40">
+				<div id="search_form_box">
+					<form id="search_form" action="http://www.dannysite.com/blog/" method="get">
+						<input id="search_content" type="text" name="search" placeholder="找找看你想的">
+					</form>
+				</div>
+			</div>
+		</div>
+	<!-- end .side-bar --></div>
+{% block content %}
+
+{% endblock %}
+
+	<div class="side-bar fltrt">
+		<div class="side-bar-box category">
+			<div class="sbar-title content-generic-title">
+				<span>CATEGORIES</span>
+			</div>
+			<div class="sbar-content">
+                {% for category in all_categorys %}
+
+                    <a href="?category={{ category.id }}">
+                        <div class="cate-item">
+                            <div class="cate-name fltlft">
+                                <span>{{ category }}</span>
+                            </div>
+                            <div class="cate-rank fltrt">
+                                <span>{{ category.blogmodel_set.count }}</span>
+                            </div>
+                            <div class="clearfloat"></div>
+                        </div>
+                    </a>
+                {% endfor %}
+
+
+			</div>
+		</div>
+		<div class="side-bar-box extra">
+		</div>
+	</div>
+	<div class="clearfloat"></div>
+
+
+    <!-- end .content --></div>
+    <div class="back-to-top" style="position: fixed; right: 30px; bottom: 30px; cursor: pointer; z-index: 10000; display: none;">
+    	<img src="{% static 'images/top.png' %}" width="40">
+    </div>
+
+    <div class="footer">
+    	<div class="ft-item-box fltlft" id="subscribe_contact">
+        	<div class="ft-box-title" id="sc_title">
+            	<span>SUBSCRIBE &amp; CONTACT</span>
+            </div>
+            <div class="ft-box-content" id="sc_content">
+            	<div id="sc_items">
+                    <a title="contact me by qq" target="_blank" class="sc-item" id="qq" href="tencent://message/?uin=983821194&Menu=yes& Service=300&sigT=42a1e5347953b64c5ff3980f8a6e644d4b31456cb0b6ac6b27663a3c4dd0f4aa14a543b1716f9d45"><img src="{% static 'images/qq.png' %}" height="25"></a>
+                    <a title="visit my sina weibo" target="_blank" class="sc-item" id="weibo" href="https://weibo.com/u/2645737234?refer_flag=1001030201_"><img src="{% static 'images/weibo.png' %}" height="25"></a>
+                    <a title="contact me by email" target="_blank" class="sc-item" id="mail" href="mailto:hf_room@outlook.com"><img src="{% static 'images/mail.png' %}" height="25"></a>
+                    <a title="visit my github page" target="_blank" class="sc-item" id="github" href="https://github.com/McEchean?tab=repositories"><img src="{% static 'images/github.png' %}" height="25"></a>
+                </div>
+                <div id="sc_sep"></div>
+            </div>
+        </div>
+{#        <div class="ft-item-box link fltlft">#}
+{#        	<div class="ft-box-title" id="link_title">#}
+{#            	<span>LINKS</span>#}
+{#            </div>#}
+{#            <div class="ft-box-content" id="link_content">#}
+{#                #}
+{#                    <a class="link-item" href="http://www.felixglow.com/" target="_blank">Felix</a>#}
+{#                #}
+{#            </div>#}
+{#        </div>#}
+        <div class="clearfloat"></div>
+        <div class="copyright">
+        	<span><i>Designed by <b>McEachen</b>.</i></span><span><i>Copyright 2012 - 2017 <b>MceachenWork Project</b>.</i></span>
+        </div>
+    <!-- end .footer --></div>
+<!-- end .container --></div>
+{% block custom_js %}{% endblock %}
+
+
+</body></html>
